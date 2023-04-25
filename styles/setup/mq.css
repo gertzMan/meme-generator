@@ -1,0 +1,17 @@
+/* @media (min-width: 640px) {
+  :root {
+    --site-width: var(--s);
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --site-width: var(--m);
+  }
+}
+
+@media (min-width: 1160px) {
+  :root {
+    --site-width: var(--l);
+  }
+} */

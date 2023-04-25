@@ -1,0 +1,22 @@
+.main-layout {
+  display: grid;
+  /* grid-template-columns: var(--layout-padding), 1fr, var(--layout-padding); */
+
+  grid-template-columns:
+    minmax(var(--layout-padding), 1fr)
+    minmax(auto, var(--site-width))
+    /* minmax(auto, 1500px) */
+    minmax(var(--layout-padding), 1fr);
+}
+
+.main-layout > *:not(.full) {
+  grid-column: 2;
+}
+
+.main-layout > .full {
+  grid-column: 1/-1;
+}
+
+.main-content {
+  border-inline: 1px solid var(--clr5);
+}

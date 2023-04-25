@@ -1,0 +1,25 @@
+.main-header-container {
+  background-color: var(--clr4);
+  box-shadow: inset 0 -6px 0 #1e1e1e;
+}
+
+.main-nav a {
+  font-family: lato-bold;
+  text-decoration: none;
+  color: var(--clr2);
+  cursor: pointer;
+}
+.main-nav li a {
+  width: 129px;
+  height: 129px;
+  box-shadow: -1px 0 0 #1d1d1d;
+  background-color: var(--clr4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav li a:hover {
+  color: var(--clr3);
+  border-block-end: 5px var(--clr3) solid;
+}

@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: lato;
+  color: var(--clr1);
+  line-height: 1.25;
+}
+
+body {
+  margin: 0;
+}
+
+/* button  */
+
+button,
+.btn {
+  font-family: lato-b;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--clr9);
+  background-color: var(--clr7);
+  border: 2px solid var(--clr8);
+  padding: 0.5em 1.75em;
+}
+
+button:hover,
+.btn:hover {
+  color: var(--clr3);
+  border-color: var(--clr3);
+}
+.btn-rounded {
+  border-radius: 2em;
+}
+
+.btn-arrow {
+  position: relative;
+
+  transition: padding 0.4s;
+}
+
+.btn-arrow:hover {
+  padding-inline-end: 2.5em;
+}
+
+.btn-arrow:hover::after {
+  content: '\2192';
+  position: absolute;
+  right: 0.875em;
+}

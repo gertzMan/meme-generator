@@ -1,0 +1,19 @@
+:root {
+  /* Palette  */
+  --clr1: #606060;
+  --clr2: #ffffff;
+  --clr3: #58c93a;
+  --clr4: #292929;
+  --clr5: #e1e0e0;
+  --clr6: #818181;
+  --clr7: #f8f8f8;
+  --clr8: #c2c2c2; /*button border color */
+  --clr9: #c7c7c7; /*button text color */
+
+  /* Layout */
+  --site-width: 980px;
+  --l: 980px;
+  --m: 860px;
+  --s: 600px;
+  --layout-padding: 20px;
+}
