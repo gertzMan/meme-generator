@@ -11,9 +11,26 @@
     ></script>
     <title>Meme Generator.</title>
   </head>
-  <body class="main-layout">
-    <div class="canvas-container">
-      <canvas id="my-canvas" width="400" height="400"></canvas>
+
+  <body onload="onInit()">
+    <section class="gallery">
+      <div class="keywords-container"></div>
+      <div class="gallery-container"></div>
+    </section>
+
+    <div class="editor-container flex justify-center">
+      <div class="canvas-container">
+        <canvas id="main-canvas" width="400" height="400"></canvas>
+      </div>
+      <div class="editor-controls"></div>
     </div>
   </body>
+
+  <script src="/js/services/utilService.js"></script>
+  <script src="/js/services/memeService.js"></script>
+  <script src="/js/services/galleryService.js"></script>
+  <script src="/js/memeController.js"></script>
+  <script src="/js/galleryController.js"></script>
+  <script src="/js/appController.js"></script>
+  <script src="/js//canvasController.js"></script>
 </html>

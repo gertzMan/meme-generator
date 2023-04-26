@@ -1,0 +1,6 @@
+.editor-controls {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.65rem;
+  margin-bottom: 1.25rem;
+  width: 100px;
+}
