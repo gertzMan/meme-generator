@@ -5,25 +5,205 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/747f0fe142.js"
-      crossorigin="anonymous"
-    ></script>
     <title>Meme Generator.</title>
   </head>
 
-  <body onload="onInit()">
+  <body class="main-layout" onload="onInit()">
+    <!-- header   -->
+    <header class="main-head">The header</header>
+
+    <!-- main nav  -->
+    <nav class="main-nav">
+      <p>MAIN NAV</p>
+      <ul>
+        <li><a href="">Nav 1</a></li>
+        <li><a href="">Nav 2</a></li>
+        <li><a href="">Nav 3</a></li>
+      </ul>
+    </nav>
+
+    <!-- gallery section -->
+
     <section class="gallery">
-      <div class="keywords-container"></div>
+      <div class="gallery-toolset">
+        <div class="keywords-container"></div>
+        <div class="gallery-controls">
+          <input
+            oninput="onFilterText(this.value)"
+            list="keywords-data-list"
+            name="keywords-data-list"
+          />
+
+          <datalist id="keywords-data-list"> </datalist>
+        </div>
+      </div>
       <div class="gallery-container"></div>
     </section>
 
-    <div class="editor-container flex justify-center">
-      <div class="canvas-container">
-        <canvas id="main-canvas" width="400" height="400"></canvas>
+    <!-- editor section -->
+    <section class="editor">
+      <div class="editor-container flex justify-center">
+        <div class="canvas-container">
+          <canvas id="main-canvas" width="400" height="400"></canvas>
+        </div>
+        <div class="editor-controls">
+          <div class="main-controls">
+            <input
+              placeholder="write something!"
+              type="text"
+              class="input-line"
+              oninput="onSetLineText(this.value)"
+            />
+            <button
+              class="btn menu-btn"
+              onclick="onLineMove(-2)"
+              title="Move line up"
+            >
+              <img src="/img/icons/up.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onLineMove(2)"
+              title="Move line down"
+            >
+              <img src="/img/icons/down.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onSwitchLine()"
+              title="Switch lines"
+            >
+              <img
+                src="/img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+              />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onAddTextLine()"
+              title="Add text line"
+            >
+              <img src="/img/icons/add.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onDeleteLine()"
+              title="Delete line"
+            >
+              <img src="/img/icons/trash.png" />
+            </button>
+
+            <button
+              class="btn menu-btn"
+              onClick="onSetFontSize(1)"
+              title="Increase font size"
+            >
+              <img src="/img/icons/increase font.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onClick="onSetFontSize(-1)"
+              title="Decrease font size"
+            >
+              <img src="/img/icons/decrease font - icon.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onTextAlign('start')"
+              title="Align text to left"
+            >
+              <img src="/img/icons/align-to-left.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onTextAlign('center')"
+              title="Align text to center"
+            >
+              <img src="/img/icons/center-text-alignment.png" />
+            </button>
+            <button
+              class="btn menu-btn"
+              onclick="onTextAlign('end')"
+              title="Align text to right"
+            >
+              <img src="/img/icons/align-to-right.png" />
+            </button>
+            <select
+              class="select-font-family btn"
+              onchange="onChangeFontFamily(this.value)"
+            >
+              <option value="impact">Impact</option>
+              <option value="font2">font2</option>
+              <option value="font3">font3</option>
+              <option value="font4">font4</option>
+            </select>
+
+            <button class="btn menu-btn" title="Change stroke color">
+              <img
+                src="/img/icons/text stroke.png"
+                onclick="document.querySelector('.btn input[type=color]').click();"
+              />
+              <input
+                type="color"
+                name="change stroke color"
+                value="#005000"
+                oninput="onStrokeChange(this.value)"
+                style="display: none"
+              />
+            </button>
+
+            <button
+              class="btn menu-btn"
+              title="Change text color"
+              id="text-color-button"
+              style="position: relative"
+            >
+              <img
+                src="/img/icons/paint-board-and-brush.png"
+                onclick="document.querySelector('#text-color-button input[type=color]').click();"
+              />
+              <input
+                type="color"
+                name="change text color"
+                value="#005000"
+                oninput="onTextColorChange(this.value)"
+                style="display: none"
+              />
+            </button>
+          </div>
+          <div class="file-media-controls">
+            <label for=""
+              >use your own
+              <input
+                type="file"
+                class="file-input btn"
+                name="image"
+                onchange="onImgInput(event)"
+            /></label>
+
+            <button class="btn" onclick="onUploadImg()">
+              Share to facebook
+            </button>
+
+            <a
+              href="#"
+              class="btn"
+              onclick="downloadImg(this)"
+              download="my-img.jpg"
+              >Download as jpeg</a
+            >
+          </div>
+        </div>
       </div>
-      <div class="editor-controls"></div>
-    </div>
+    </section>
+
+    <!-- main footer -->
+    <footer class="main-footer flex space-between align-center">
+      <ul class="social-links flex clean-list">
+        <li><a hrf="">facebook</a></li>
+        <li><a href="">twitter</a></li>
+        <li><a href="">linkedin</a></li>
+      </ul>
+    </footer>
   </body>
 
   <script src="/js/services/utilService.js"></script>

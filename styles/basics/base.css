@@ -1,17 +1,34 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-html {
+/* html {
   font-family: lato;
   color: var(--clr1);
   line-height: 1.25;
-}
+} */
 
 body {
   margin: 0;
 }
-button img {
-  width: 10px;
-  height: 10px;
+
+button.menu-btn {
+  padding: 4px;
+  width: 2em;
+  height: 2em;
+}
+
+.menu-btn img {
+  width: 100%;
+  height: 100%;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; */
 }

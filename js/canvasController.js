@@ -1,22 +1,21 @@
 'use strict'
 function resizeCanvas() {
   const elContainer = document.querySelector('.canvas-container')
-
+  //offset - width or height of container including  padding and border
+  // TODO try clientWith  instead of offset width to compensate for borders
   gCanvas.width = elContainer.offsetWidth
-
+  gCanvas.height = elContainer.offsetHeight
   renderMeme()
 }
 
-function drawImg(img) {
-  gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-}
-
-function drawText({ text, size, color, stroke, font }) {
+function drawText({ align, text, size, color, stroke, font, linePos }) {
   gCtx.fillStyle = color
   gCtx.strokeStyle = stroke
   gCtx.font = `${size}px ${font}`
-  let x = gCanvas.width / 2
-  let y = gCanvas.height
-  gCtx.fillText(text, x, y)
-  gCtx.strokeText(text, x, y)
+
+  gCtx.textAlign = align
+  gCtx.textBaseline = ''
+
+  gCtx.fillText(text, linePos.x, linePos.y)
+  gCtx.strokeText(text, linePos.x, linePos.y)
 }

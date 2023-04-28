@@ -58,6 +58,17 @@ const gImgs = [
   },
   { id: 17, url: 'img/meme-image-square/17.jpg', keywords: ['politics'] },
   { id: 18, url: 'img/meme-image-square/18.jpg', keywords: ['cartoon'] },
+  { id: 19, url: 'img/mem-imgs/19pic.jpg', keywords: ['funny', 'love'] },
+  { id: 20, url: 'img/mem-imgs/20pic.jpg', keywords: ['funny', 'celebrity'] },
+  { id: 21, url: 'img/mem-imgs/21pic.jpg', keywords: ['funny', 'celebrity'] },
+  { id: 22, url: 'img/mem-imgs/22pic.jpg', keywords: ['funny', 'celebrity'] },
+  {
+    id: 23,
+    url: 'img/mem-imgs/23pic.jpg',
+    keywords: ['politics', 'celebrity'],
+  },
+  { id: 24, url: 'img/mem-imgs/24pic.jpg', keywords: ['pet', 'funny', 'cute'] },
+  { id: 25, url: 'img/mem-imgs/25pic.jpg', keywords: ['celebrity', 'funny'] },
 ]
 
 const gKeywordSearchCountMap = {
@@ -72,8 +83,14 @@ const gKeywordSearchCountMap = {
   sports: 4,
   cute: 4,
   pet: 7,
+  love: 1,
 }
 
+const gFilterBy = {
+  text: '',
+  key: '',
+}
+// TODO make better id sys
 let gImgId = gImgs[gImgs.length - 1].id + 1
 
 //getter functions
@@ -82,7 +99,15 @@ function getImg(imgId) {
 }
 
 function getImgs() {
-  return gImgs
+  let filteredImgs = gImgs
+
+  if (gFilterBy.text) {
+    filteredImgs = filteredImgs.filter((img) =>
+      img.keywords.some((key) => key.includes(gFilterBy.text))
+    )
+  }
+
+  return filteredImgs
 }
 
 function getKeyWordsMap() {
@@ -90,10 +115,14 @@ function getKeyWordsMap() {
 }
 
 function getKeyWords() {
-  return gKeywordSearchCountMap.keys()
+  return Object.keys(gKeywordSearchCountMap)
 }
 
 //setter functions
 function incrementKeywordCount(keyword) {
   getKeyWordsMap()[keyword]++
+}
+
+function setTextFilter(text) {
+  gFilterBy.text = text
 }
