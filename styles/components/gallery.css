@@ -10,14 +10,13 @@
 .keywords-container span:last-child {
   margin-inline-end: 0.4em;
 }
+
 .keywords-container span:first-child {
   margin-inline-start: 0.4em;
 }
 
 .keyword-item {
   cursor: pointer;
-}
-.keyword-item::before {
 }
 
 .keyword-item:hover {
@@ -44,8 +43,6 @@
 ul {
   list-style: none;
 }
-
-/* Responsive image gallery rules begin*/
 
 .image-gallery {
   display: flex;
@@ -90,7 +87,6 @@ ul {
   justify-content: center;
 }
 
-/* hover */
 .image-gallery li:hover .overlay {
   transform: scale(1);
 }

@@ -2,25 +2,23 @@ section.editor {
   display: none;
   align-self: center;
   margin-inline: auto;
-  background-color: lightgreen;
-}
-
-canvas {
-  border: 4px blueviolet solid;
-}
-.canvas-container {
-  border: 1px red solid;
-  /* height: fit-content; */
 }
 
 .editor-container {
   align-items: center;
 }
 
+.canvas-container {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
 .main-controls {
   display: flex;
   flex-wrap: wrap;
 }
+
 .main-controls-flex-item {
   flex-basis: 20%;
 }
@@ -51,4 +49,5 @@ canvas {
 
 .emoji-controls span {
   flex-basis: 10%;
+  cursor: pointer;
 }

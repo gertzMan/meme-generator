@@ -8,20 +8,16 @@
   box-sizing: inherit;
 }
 
-/* html {
-  font-family: lato;
-  color: var(--clr1);
-  line-height: 1.25;
-} */
-
 body {
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  /* overflow: none; */
   min-height: 100vh;
-
   font-family: 'Lato', sans-serif;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 button.menu-btn {
