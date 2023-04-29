@@ -5,20 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/747f0fe142.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Meme Generator.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="main-layout" onload="onInit()">
     <!-- header   -->
-    <header class="main-head">The header</header>
+    <header class="main-head">
+      <div class="logo">
+        <img src="./img/brand/logo.png" alt="" />
+      </div>
+    </header>
 
     <!-- main nav  -->
     <nav class="main-nav">
-      <p>MAIN NAV</p>
       <ul>
-        <li><a href="">Nav 1</a></li>
-        <li><a href="">Nav 2</a></li>
-        <li><a href="">Nav 3</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="">Saved Memes</a></li>
+        <li><a href="">About</a></li>
       </ul>
     </nav>
 
@@ -27,182 +41,214 @@
     <section class="gallery">
       <div class="gallery-toolset">
         <div class="keywords-container"></div>
-        <div class="gallery-controls">
-          <input
-            oninput="onFilterText(this.value)"
-            list="keywords-data-list"
-            name="keywords-data-list"
-          />
+      </div>
+      <div class="gallery-controls">
+        <input
+          placeholder="Filter memes by keywords"
+          oninput="onFilterText(this.value)"
+          list="keywords-data-list"
+          name="keywords-data-list"
+        />
 
-          <datalist id="keywords-data-list"> </datalist>
-        </div>
+        <datalist id="keywords-data-list"> </datalist>
       </div>
       <div class="gallery-container"></div>
     </section>
 
     <!-- editor section -->
     <section class="editor">
-      <div class="editor-container flex justify-center">
+      <div class="editor-container">
         <div class="canvas-container">
           <canvas id="main-canvas" width="400" height="400"></canvas>
-        </div>
-        <div class="editor-controls">
-          <div class="main-controls">
-            <input
-              placeholder="write something!"
-              type="text"
-              class="input-line"
-              oninput="onSetLineText(this.value)"
-            />
-            <button
-              class="btn menu-btn"
-              onclick="onLineMove(-2)"
-              title="Move line up"
-            >
-              <img src="/img/icons/up.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onLineMove(2)"
-              title="Move line down"
-            >
-              <img src="/img/icons/down.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onSwitchLine()"
-              title="Switch lines"
-            >
-              <img
-                src="/img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
-              />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onAddTextLine()"
-              title="Add text line"
-            >
-              <img src="/img/icons/add.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onDeleteLine()"
-              title="Delete line"
-            >
-              <img src="/img/icons/trash.png" />
-            </button>
-
-            <button
-              class="btn menu-btn"
-              onClick="onSetFontSize(1)"
-              title="Increase font size"
-            >
-              <img src="/img/icons/increase font.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onClick="onSetFontSize(-1)"
-              title="Decrease font size"
-            >
-              <img src="/img/icons/decrease font - icon.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onTextAlign('start')"
-              title="Align text to left"
-            >
-              <img src="/img/icons/align-to-left.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onTextAlign('center')"
-              title="Align text to center"
-            >
-              <img src="/img/icons/center-text-alignment.png" />
-            </button>
-            <button
-              class="btn menu-btn"
-              onclick="onTextAlign('end')"
-              title="Align text to right"
-            >
-              <img src="/img/icons/align-to-right.png" />
-            </button>
-            <select
-              class="select-font-family btn"
-              onchange="onChangeFontFamily(this.value)"
-            >
-              <option value="impact">Impact</option>
-              <option value="font2">font2</option>
-              <option value="font3">font3</option>
-              <option value="font4">font4</option>
-            </select>
-
-            <button class="btn menu-btn" title="Change stroke color">
-              <img
-                src="/img/icons/text stroke.png"
-                onclick="document.querySelector('.btn input[type=color]').click();"
-              />
-              <input
-                type="color"
-                name="change stroke color"
-                value="#005000"
-                oninput="onStrokeChange(this.value)"
-                style="display: none"
-              />
-            </button>
-
-            <button
-              class="btn menu-btn"
-              title="Change text color"
-              id="text-color-button"
-              style="position: relative"
-            >
-              <img
-                src="/img/icons/paint-board-and-brush.png"
-                onclick="document.querySelector('#text-color-button input[type=color]').click();"
-              />
-              <input
-                type="color"
-                name="change text color"
-                value="#005000"
-                oninput="onTextColorChange(this.value)"
-                style="display: none"
-              />
-            </button>
-          </div>
-          <div class="file-media-controls">
-            <label for=""
-              >use your own
-              <input
-                type="file"
-                class="file-input btn"
-                name="image"
-                onchange="onImgInput(event)"
-            /></label>
-
-            <button class="btn" onclick="onUploadImg()">
-              Share to facebook
-            </button>
-
-            <a
-              href="#"
-              class="btn"
-              onclick="downloadImg(this)"
-              download="my-img.jpg"
-              >Download as jpeg</a
-            >
-          </div>
         </div>
       </div>
     </section>
 
+    <div class="editor-controls">
+      <div class="input-line">
+        <input
+          placeholder="write something!"
+          type="text"
+          class="input-line"
+          oninput="onSetLineText(this.value)"
+        />
+      </div>
+      <div class="main-controls">
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onLineMove(-2)"
+          title="Move line up"
+        >
+          <img src="/img/icons/up.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onLineMove(2)"
+          title="Move line down"
+        >
+          <img src="/img/icons/down.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onSwitchLine()"
+          title="Switch lines"
+        >
+          <img
+            src="/img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+          />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onAddTextLine()"
+          title="Add text line"
+        >
+          <img src="/img/icons/add.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onDeleteLine()"
+          title="Delete line"
+        >
+          <img src="/img/icons/trash.png" />
+        </button>
+
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onClick="onSetFontSize(1)"
+          title="Increase font size"
+        >
+          <img src="/img/icons/increase font.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onClick="onSetFontSize(-1)"
+          title="Decrease font size"
+        >
+          <img src="/img/icons/decrease font - icon.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onTextAlign('start')"
+          title="Align text to left"
+        >
+          <img src="/img/icons/align-to-left.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onTextAlign('center')"
+          title="Align text to center"
+        >
+          <img src="/img/icons/center-text-alignment.png" />
+        </button>
+        <button
+          class="btn menu-btn main-controls-flex-item"
+          onclick="onTextAlign('end')"
+          title="Align text to right"
+        >
+          <img src="/img/icons/align-to-right.png" />
+        </button>
+        <select
+          class="select-font-family btn menu-btn main-controls-flex-item-select"
+          onchange="onChangeFontFamily(this.value)"
+        >
+          <option value="impact">Impact</option>
+          <option value="font2">font2</option>
+          <option value="font3">font3</option>
+          <option value="font4">font4</option>
+        </select>
+
+        <button class="btn menu-btn" title="Change stroke color">
+          <img
+            src="/img/icons/text stroke.png"
+            onclick="document.querySelector('.btn input[type=color]').click();"
+          />
+          <input
+            type="color"
+            name="change stroke color"
+            value="#005000"
+            oninput="onStrokeChange(this.value)"
+            style="display: none"
+          />
+        </button>
+
+        <button
+          class="btn menu-btn"
+          title="Change text color"
+          id="text-color-button"
+          style="position: relative"
+        >
+          <img
+            src="/img/icons/paint-board-and-brush.png"
+            onclick="document.querySelector('#text-color-button input[type=color]').click();"
+          />
+          <input
+            type="color"
+            name="change text color"
+            value="#005000"
+            oninput="onTextColorChange(this.value)"
+            style="display: none"
+          />
+        </button>
+      </div>
+
+      <div class="emoji-controls"></div>
+
+      <div class="file-media-controls">
+        <label for=""
+          >use your own
+          <input
+            type="file"
+            class="file-input btn"
+            name="image"
+            onchange="onImgInput(event)"
+        /></label>
+
+        <button class="btn" onclick="onUploadImg()">Share to facebook</button>
+
+        <a
+          href="#"
+          class="btn"
+          onclick="downloadImg(this)"
+          download="my-img.jpg"
+          >Download as jpeg</a
+        >
+      </div>
+    </div>
+
     <!-- main footer -->
-    <footer class="main-footer flex space-between align-center">
-      <ul class="social-links flex clean-list">
-        <li><a hrf="">facebook</a></li>
-        <li><a href="">twitter</a></li>
-        <li><a href="">linkedin</a></li>
-      </ul>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <h3>Gertzkinator</h3>
+        <p>Meme making made easy</p>
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy; <a href="#">Gertzkinator inc.</a></p>
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
 

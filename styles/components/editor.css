@@ -1,20 +1,54 @@
 section.editor {
   display: none;
-  background-color: aquamarine;
+  align-self: center;
+  margin-inline: auto;
+  background-color: lightgreen;
+}
+
+canvas {
+  border: 4px blueviolet solid;
 }
 .canvas-container {
   border: 1px red solid;
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 .editor-container {
-  flex-direction: column;
   align-items: center;
-  background-color: aquamarine;
+}
+
+.main-controls {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-controls-flex-item {
+  flex-basis: 20%;
+}
+
+.main-controls-flex-item-select {
+  flex-basis: 60%;
+}
+
+.editor-controls > .input-line > input {
+  width: 100%;
+  display: block;
+  margin: 1em 0em;
+  padding: 0.5em;
 }
 
 .editor-controls {
-  flex-direction: column;
-  background-color: antiquewhite;
+  display: none;
+  background-color: lightblue;
   border: 1px black solid;
+  padding-inline: 1em;
+  width: 100%;
+}
+
+.emoji-controls {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.emoji-controls span {
+  flex-basis: 10%;
 }

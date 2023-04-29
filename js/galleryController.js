@@ -30,14 +30,17 @@ function renderKeywords() {
   const elKeywordContainer = document.querySelector('.keywords-container')
   elKeywordContainer.innerHTML = ''
   for (const key in keywordsMap) {
-    const span = document.createElement('span')
-    // classList.add('keyword-item')
-    span.textContent = key
-    const fontSize = keywordsMap[key] * 2
-    span.style.fontSize = `${fontSize}px`
-    span.classList.add('keyword-item')
-    span.addEventListener('click', () => onKeywordClick(`${key}`))
-    elKeywordContainer.appendChild(span)
+    if (keywordsMap[key] >= 4) {
+      const span = document.createElement('span')
+      // classList.add('keyword-item')
+      span.textContent = key
+      const fontSize =
+        keywordsMap[key] < 15 ? keywordsMap[key] * 3 : keywordsMap[key]
+      span.style.fontSize = `${fontSize}px`
+      span.classList.add('keyword-item')
+      span.addEventListener('click', () => onKeywordClick(`${key}`))
+      elKeywordContainer.appendChild(span)
+    }
   }
 }
 
@@ -58,6 +61,7 @@ function onImgSelect(imgId) {
   setMemImg(imgId)
 
   document.querySelector('section.gallery').style.display = 'none'
+  document.querySelector('.editor-controls').style.display = 'block'
   document.querySelector('section.editor').style.display = 'flex'
 
   //  TODO add things

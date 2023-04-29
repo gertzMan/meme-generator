@@ -1,16 +1,40 @@
 .keywords-container {
-  /* display: flex;
-  flex-wrap: wrap; */
-  background-color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  width: 100%;
+  padding-inline: 0.5em;
 }
 
-.keywords-container span {
-  border: 1px solid black;
-  margin: 3px;
+.keywords-container span:last-child {
+  margin-inline-end: 0.4em;
+}
+.keywords-container span:first-child {
+  margin-inline-start: 0.4em;
+}
+
+.keyword-item {
+  cursor: pointer;
+}
+.keyword-item::before {
+}
+
+.keyword-item:hover {
+  background-color: #b48bcc;
 }
 
 .gallery-controls {
-  background-color: gold;
+  /* background-color:  */
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.gallery-controls input {
+  width: 60%;
+  padding: 0.5em;
 }
 
 .gallery-container {

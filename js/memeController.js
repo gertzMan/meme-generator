@@ -1,5 +1,7 @@
 'use strict'
 
+//rendering
+
 function renderMeme() {
   const mem = getMem()
   const img = getImg(mem.selectedImgId)
@@ -13,6 +15,17 @@ function renderMeme() {
     gCtx.drawImage(canvasImg, 0, 0, gCanvas.width, gCanvas.height)
     _drawLines(mem.lines)
   }
+}
+
+function renderEmojis() {
+  // TODO: question for ori if you read this: should I make a getter for a global var?
+  const elEmojiControls = document.querySelector('.emoji-controls')
+
+  const strHTML = gEmojis
+    .map((emoji) => `<span onclick="onAddTextLine('${emoji}')">${emoji}</span>`)
+    .join('')
+
+  elEmojiControls.innerHTML = strHTML
 }
 
 //event handlers
@@ -31,8 +44,8 @@ function onSetFontSize(diff) {
   renderMeme()
 }
 
-function onAddTextLine() {
-  addLine()
+function onAddTextLine(text) {
+  addLine(text)
   renderMeme()
 }
 

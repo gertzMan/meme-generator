@@ -9,6 +9,21 @@ let gMeme = {
   lines: [_createLine('write something!')],
 }
 
+const gEmojis = [
+  '😀',
+  '😃',
+  '😄',
+  '😁 ',
+  '😆',
+  '😅',
+  '😂',
+  '🤣',
+  '🥲',
+  '😊',
+  '😗',
+  '😙',
+  '😚',
+]
 _createMems()
 
 // setter functions
@@ -90,6 +105,7 @@ function getMems() {
 function getSelectedLine() {
   return gMeme.lines[gMeme.selectedLineIdx]
 }
+
 // private functions
 function _createMems() {
   let memes = _loadMemesFromStorage()
@@ -103,7 +119,6 @@ function _createMems() {
 }
 
 function _createLine(text, pos = { x: 200, y: 380 }) {
-  console.log(pos)
   return {
     text,
     size: 30,

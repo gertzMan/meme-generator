@@ -11,25 +11,39 @@
 .main-nav {
   grid-area: nav;
 }
-
-.main-layout {
-  height: 100vh;
-  display: grid;
-  grid-template-areas:
-    'header'
-    'nav'
-    'article'
-    'footer';
+.editor-controls {
+  grid-area: control;
 }
 
 @media (min-width: 600px) {
   .main-layout {
-    height: 100vh;
-    grid-template-columns: 12rem auto 12rem;
+    /* height: 100vh; */
+    grid-template-columns: 1fr 4fr 2fr;
     grid-template-areas:
-      'header header header'
-      'nav article article'
-      'nav article article'
-      'footer footer footer';
+      'header header  header'
+      'nav article  control'
+      'nav article  control'
+      'footer footer  footer';
+
+    margin-inline: 5em;
+    border: 1px solid powderblue;
+  }
+
+  .editor-controls {
+    border: 1px black solid;
+    padding-inline: 1em;
+    width: 18em;
+  }
+  .footer-menu ul {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .main-nav {
+    padding: 2em;
+  }
+  .main-nav > ul {
+    display: block;
+    /* box-shadow: 12px -18px 10px 1px rgba(0, 0, 0, 0.52); */
   }
 }

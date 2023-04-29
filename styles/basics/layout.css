@@ -1,14 +1,10 @@
 .main-layout {
   display: grid;
-  gap: 20px;
+  gap: 1em;
   grid-template-areas:
     'header'
     'nav'
-    'content'
-    'sidebar'
+    'article'
+    'control'
     'footer';
-}
-
-.main-layout > * {
-  outline: 4px red solid;
 }
