@@ -53,7 +53,6 @@ function renderKeywordsDatalist() {
     .join('')
   document.querySelector('#keywords-data-list').innerHTML = strHTML
 }
-// TODO deal with saved memes
 
 // event handlers
 
@@ -64,7 +63,6 @@ function onImgSelect(imgId) {
   document.querySelector('.editor-controls').style.display = 'block'
   document.querySelector('section.editor').style.display = 'flex'
 
-  //  TODO add things
   resizeCanvas()
 }
 

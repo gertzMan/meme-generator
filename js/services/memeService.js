@@ -31,6 +31,7 @@ const gEmojis = [
   '💋',
   '💅',
 ]
+
 _createMems()
 
 // setter functions
@@ -77,11 +78,6 @@ function addLine(text = 'write something!') {
 }
 
 function switchLine() {
-  // debugger
-  // let { selectedLineIdx } = gMeme
-  console.log('gMeme.selectedLineIdx', gMeme.selectedLineIdx)
-  console.log('gMeme.lines.length-1', gMeme.lines.length - 1)
-
   gMeme.selectedLineIdx =
     gMeme.selectedLineIdx === gMeme.lines.length - 1
       ? 0
@@ -90,7 +86,7 @@ function switchLine() {
 }
 
 function moveLine(diff) {
-  //TODO add out of bound protection
+  //TODO add out of bounds protection
   gMeme.lines[gMeme.selectedLineIdx].linePos.y += diff
 }
 
@@ -100,7 +96,7 @@ function deleteLine() {
   gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
-// getter function
+// getter functions
 function getMem() {
   return gMeme
 }
@@ -143,7 +139,6 @@ function _createLine(text, pos = { x: 200, y: 380 }) {
 }
 
 function _calcNewPos() {
-  // let lastLineIdx = gMeme.lines.length-1
   let lastLine = gMeme.lines[gMeme.lines.length - 1]
   return {
     x: lastLine.linePos.x,

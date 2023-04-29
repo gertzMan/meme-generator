@@ -12,7 +12,7 @@ function drawImg(img) {
 function resizeCanvas() {
   const elContainer = document.querySelector('.canvas-container')
   //offset - width or height of container including  padding and border
-  // TODO try clientWith  instead of offset width to compensate for borders
+  // TODO try clientWidth instead of offset width to compensate for borders
   gCanvas.width = elContainer.offsetWidth
   gCanvas.height = elContainer.offsetHeight
   renderMeme()

@@ -71,7 +71,6 @@ function onLineMove(diff) {
 }
 
 function onDeleteLine() {
-  // TODO fix this :
   deleteLine()
   renderMeme()
 }
