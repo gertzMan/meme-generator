@@ -15,7 +15,7 @@ function renderGallery() {
   strHTML += images
     .map(
       (img) => `<li class="gallery-item" onclick="onImgSelect(${img.id})">
-  <img src="${img.url}"  alt="" />
+  <img src=./"${img.url}"  alt="" />
   <div class="overlay"><span>Choose Me!</span></div>
   </li>`
     )
