@@ -17,7 +17,6 @@
 
 @media (min-width: 600px) {
   .main-layout {
-    /* height: 100vh; */
     grid-template-columns: 1fr 4fr 2fr;
     grid-template-areas:
       'header header  header'
@@ -27,6 +26,12 @@
 
     margin-inline: 5em;
     border: 1px solid powderblue;
+  }
+
+  .canvas-container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 
   .editor-controls {
@@ -44,6 +49,5 @@
   }
   .main-nav > ul {
     display: block;
-    /* box-shadow: 12px -18px 10px 1px rgba(0, 0, 0, 0.52); */
   }
 }
