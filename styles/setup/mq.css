@@ -1,8 +1,7 @@
 .main-head {
   grid-area: header;
 }
-.editor,
-.gallery {
+.test {
   grid-area: article;
 }
 .main-footer {

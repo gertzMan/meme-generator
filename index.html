@@ -37,31 +37,32 @@
     </nav>
 
     <!-- gallery section -->
-
-    <section class="gallery">
-      <div class="gallery-toolset">
-        <div class="keywords-container"></div>
-      </div>
-      <div class="gallery-controls">
-        <input
-          placeholder="Filter memes by keywords"
-          oninput="onFilterText(this.value)"
-          list="keywords-data-list"
-          name="keywords-data-list"
-        />
-
-        <datalist id="keywords-data-list"> </datalist>
-      </div>
-      <div class="gallery-container"></div>
-    </section>
-
-    <!-- editor section -->
-    <section class="editor">
-      <div class="editor-container">
-        <div class="canvas-container">
-          <canvas id="main-canvas" width="400" height="400"></canvas>
+    <section class="test">
+      <section class="gallery">
+        <div class="gallery-toolset">
+          <div class="keywords-container"></div>
         </div>
-      </div>
+        <div class="gallery-controls">
+          <input
+            placeholder="Filter memes by keywords"
+            oninput="onFilterText(this.value)"
+            list="keywords-data-list"
+            name="keywords-data-list"
+          />
+
+          <datalist id="keywords-data-list"> </datalist>
+        </div>
+        <div class="gallery-container"></div>
+      </section>
+
+      <!-- editor section -->
+      <section class="editor">
+        <div class="editor-container">
+          <div class="canvas-container">
+            <canvas id="main-canvas" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </section>
     </section>
 
     <div class="editor-controls">
